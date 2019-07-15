@@ -57,15 +57,16 @@ enum macro_keycodes {
 #define KC_GUIEI GUI_T(KC_LANG2)
 #define KC_ALTKN ALT_T(KC_LANG1)
 
-#define KC_GUIZ ACTION_KEY(KC_LGUI|KC_Z)
-#define KC_GUIX ACTION_KEY(KC_LGUI|KC_X)
-#define KC_GUIC ACTION_KEY(KC_LGUI|KC_C)
-#define KC_GUIV ACTION_KEY(KC_LGUI|KC_V)
-#define KC_GUIB ACTION_KEY(KC_LGUI|KC_V)
+#define KC_GUIZ LGUI(KC_Z)
+#define KC_GUIX LGUI(KC_X)
+#define KC_GUIC LGUI(KC_C)
+#define KC_GUIV LGUI(KC_V)
+#define KC_GUIB LGUI(KC_B)
 
-#define KC_GUITAB ACTION_KEY(KC_LGUI|KC_TAB)
-#define KC_GUISPC ACTION_KEY(KC_LGUI|KC_SPC)
-#define KC_ALTENT ACTION_KEY(KC_LALT|KC_ENT)
+#define KC_GUITAB LGUI(KC_TAB)
+#define KC_GUISPC LGUI(KC_SPC)
+#define KC_ALTENT LALT(KC_ENT)
+#define KC_CTL_TB LCTL(KC_TAB)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
@@ -96,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         ESC,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  ASTR,  LPRN,  RPRN,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      CTLTB,  LALT,GUISPC,GUITAB,  BSPC,ALTENT,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
+      CTLTB,CTL_TB,GUISPC,  LALT,  BSPC,ALTENT,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,  GUIZ,  GUIX,  GUIC,  GUIV,  GUIB,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
