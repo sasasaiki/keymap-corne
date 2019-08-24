@@ -67,6 +67,11 @@ enum macro_keycodes {
 #define KC_GUISPC LGUI(KC_SPC)
 #define KC_ALTENT LALT(KC_ENT)
 #define KC_CTL_TB LCTL(KC_TAB)
+#define KC_GUI1 LGUI(KC_1)
+#define KC_ALTUP LALT(KC_UP)
+#define KC_ALTDO LALT(KC_DOWN)
+#define KC_ALTRI LALT(KC_RIGHT)
+#define KC_ALTLE LALT(KC_LEFT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
@@ -97,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
         ESC,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  LPRN,  RPRN,  ASTR,  BSPC,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      CTLTB,CTL_TB,GUISPC,  LALT,  BSPC,ALTENT,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
+      CTLTB,CTL_TB,GUISPC,  LALT,ALTENT,  GUI1,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,  GUIZ,  GUIX,  GUIC,  GUIV,  GUIB,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -107,11 +112,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ADJUST] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-      XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                   WBAK,  WFWD,  WREF, XXXXX, XXXXX, XXXXX,\
+      XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      XXXXX, XXXXX, XXXXX,  WSCH,  WH_U,  WH_D,                   MS_L,  MS_D,  MS_U,  MS_R, XXXXX, XXXXX,\
+      XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                  ALTLE, ALTDO, ALTUP, ALTRI, XXXXX, XXXXX,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX,  BTN1,  BTN2, XXXXX, XXXXX, XXXXX,\
+       LSFT, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,                  XXXXX, XXXXX, XXXXX, XXXXX, XXXXX, XXXXX,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   GUIEI, LOWER, ALTKN,    GUIEI, RAISE, ALTKN \
                               //`--------------------'  `--------------------'
