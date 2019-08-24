@@ -50,3 +50,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_TIME_TO_MAX 50
 #define MOUSEKEY_WHEEL_MAX_SPEED 1
 #define MOUSEKY_WHEEL_TIME_TO_MAX 20
+
+// 一瞬タップ系、他のキーを押さなければ長押しでも効くようになる
+#define RETRO_TAPPING
