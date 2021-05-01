@@ -56,6 +56,8 @@ enum macro_keycodes {
 #define KC_CTLTB CTL_T(KC_TAB)
 #define KC_GUIEI GUI_T(KC_LANG2)
 #define KC_ALTKN ALT_T(KC_LANG1)
+#define KC_SFTKN SFT_T(KC_LANG1)
+#define KC_SFTENT SFT_T(KC_ENT)
 
 #define KC_GUIZ LGUI(KC_Z)
 #define KC_GUIX LGUI(KC_X)
@@ -65,6 +67,7 @@ enum macro_keycodes {
 
 #define KC_GUITAB LGUI(KC_TAB)
 #define KC_GUISPC LGUI(KC_SPC)
+#define KC_SFTGUI LSFT(KC_LGUI)
 #define KC_ALTENT LALT(KC_ENT)
 #define KC_CTL_TB LCTL(KC_TAB)
 #define KC_GUI1 LGUI(KC_1)
@@ -76,23 +79,23 @@ enum macro_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  BSPC,\
+        ESC,     Q,     W,     E,     R,     T,                      Y,     U,     I,     O,     P,  SFTGUI,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       CTLTB,     A,     S,     D,     F,     G,                      H,     J,     K,     L,  SCLN,  QUOT,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,  RSFT,\
+       LSFT,     Z,     X,     C,     V,     B,                      N,     M,  COMM,   DOT,  SLSH,  BSPC,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                  GUIEI, LOWER,   SPC,      ENT, RAISE, ALTKN \
+                                  GUIEI, LOWER,   SPC,      SFTENT, RAISE, ALTKN \
                               //`--------------------'  `--------------------'
   ),
- 
+
   [_LOWER] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        TAB,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  BSPC,\
+        TAB,     1,     2,     3,     4,     5,                      6,     7,     8,     9,     0,  SFTGUI,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
       CTLTB,   F10,   F11,   F12,  PGUP,  PGDN,                   LEFT,  DOWN,    UP, RIGHT,  HOME,   END,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-       LSFT,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,    F9,   F10,  RSFT,\
+       LSFT,    F1,    F2,    F3,    F4,    F5,                     F6,    F7,    F8,    F9,   F10,  BSPC,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                   GUIEI, LOWER, ALTKN,    GUIEI, RAISE, ALTKN \
                               //`--------------------'  `--------------------'
@@ -100,9 +103,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT_kc( \
   //,-----------------------------------------.                ,-----------------------------------------.
-        ESC,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  LPRN,  RPRN,  ASTR,  BSPC,\
+        ESC,  EXLM,    AT,  HASH,   DLR,  PERC,                   CIRC,  AMPR,  LPRN,  RPRN,  ASTR,  SFTGUI,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-      CTLTB,CTL_TB,GUISPC,  LALT,ALTENT,  GUI1,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
+       BSPC,CTL_TB,GUISPC,  LALT,ALTENT,  GUI1,                   MINS,   EQL,  LCBR,  RCBR,  PIPE,   GRV,\
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
        LSFT,  GUIZ,  GUIX,  GUIC,  GUIV,  GUIB,                   UNDS,  PLUS,  LBRC,  RBRC,  BSLS,  TILD,\
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -122,8 +125,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                               //`--------------------'  `--------------------'
   )
 };
-
 int RGB_current_mode;
+
+
 
 // Setting ADJUST layer RGB back to default
 void update_tri_layer_RGB(uint8_t layer1, uint8_t layer2, uint8_t layer3) {
